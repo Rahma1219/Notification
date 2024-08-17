@@ -1,0 +1,16 @@
+#box{
+    margin-left: 80px;
+}
+
+#comment{
+    border: 1px solid rgba(128, 128, 128, 0.324);
+    padding: 20px;
+   color: grey;
+    border-radius: 5px;
+    max-width: 500px;
+    cursor: pointer;
+}
+
+#comment:hover{
+   background-color:  hsl(211, 68%, 94%);
+}

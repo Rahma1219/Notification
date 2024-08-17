@@ -1,0 +1,29 @@
+.hidden{
+    display: inline-flex;
+}
+.chess{
+    display: flex;
+    justify-content: space-between;
+   
+}
+/* .dot {
+    height: 7px;
+    width: 7px;
+    background-color: red;
+    border-radius: 50%;
+    margin-top: 12px;
+    display: inline-block;
+
+} */
+.nodot{
+    background-color: white;
+}
+#mark{
+    text-decoration: none;
+    color: rgb(71, 69, 69);
+    display: flex;
+    align-items: center;
+}
+#mark:hover {
+    color: hsl(219, 85%, 26%);
+}
