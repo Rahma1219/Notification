@@ -18,9 +18,11 @@ function NotificationsItem(props) {
                             <span id='text'> {props.text} </span>
                             <span id='text2'>{props.text2} </span>
                             <span id='text3'>{props.text3}</span>
-                            {props.status == "Notification" ? (
+                            {props.read == false ? (
                                 <span class='Notdot ' id='box1' ></span>
-                            ) : (<span></span>)}
+                            ) : (<span className='nonotify'></span>)}
+
+                            
 
                         </div>
 

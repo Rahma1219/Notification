@@ -6,7 +6,7 @@ import './Notificationsbox.css'
 
 function Notificationsbox() {
 
-    const [ArrayOfObject,setArrayOfObject] =useState(
+    const [ArrayOfObject, setArrayOfObject] = useState(
         [
             {
                 id: 1,
@@ -16,11 +16,12 @@ function Notificationsbox() {
                 text3: 'My first tournament today!',
                 time: '1m ago',
                 status: 'Notification',
-                read:false,
-          
-    
-    
-    
+                read: false,
+       
+
+
+
+
             },
             {
                 id: 2,
@@ -29,10 +30,11 @@ function Notificationsbox() {
                 text: 'followed you',
                 time: '5m ago',
                 status: 'Notification',
-                read:false,
-              
-    
-    
+                read: false,
+                isNewNotify:true
+
+
+
             },
             {
                 id: 3,
@@ -42,9 +44,10 @@ function Notificationsbox() {
                 text2: 'Chess Club',
                 time: '1 day ago',
                 status: 'Notification',
-                read:false,
-            
-    
+                read: false,
+       
+
+
             },
             {
                 id: 4,
@@ -52,9 +55,9 @@ function Notificationsbox() {
                 Username: '  Rizky Hasanuddin ',
                 text: 'sent you a private message',
                 time: '5 days ago',
-               
-    
-    
+
+
+
             },
             {
                 id: 5,
@@ -62,14 +65,15 @@ function Notificationsbox() {
                 Username: 'Kimberly Smith',
                 text: ' commented on your picture',
                 time: '1 week ago',
-                imgchess:"/assets/images/image-chess.webp",
-                move:'chess',
-                
-    
-    
-    
+                imgchess: "/assets/images/image-chess.webp",
+                move: 'chess',
+                read:true
+
+
+
+
             },
-    
+
             {
                 id: 6,
                 img: "/assets/images/avatar-nathan-peterson.webp",
@@ -77,10 +81,11 @@ function Notificationsbox() {
                 text: 'reacted to your recent post',
                 text3: '5 end-game strategies to increase your win rate',
                 time: '2 weeks ago',
-    
-    
+                read:true
+
+
             },
-    
+
             {
                 id: 7,
                 img: "/assets/images/avatar-anna-kim.webp",
@@ -88,30 +93,40 @@ function Notificationsbox() {
                 text: 'left the group ',
                 text2: 'Chess Club',
                 time: '2 weeks ago',
-    
-    
+                read:true
+
+
             },
         ]
-    
+
     )
 
+    const [newNotify, setNewNotify] = useState(true);
 
- 
-function unreadCount(){
-    let unreadnot = ArrayOfObject.filter((item)=> 
-        { return item.read == false }).length
- 
-    return unreadnot
-}
+    function unreadCount() {
+        let unreadnot = ArrayOfObject.filter((item) => { return item.read == false }).length
 
-function Markallasread(){
+        return unreadnot
+    }
 
-    let newnot = ArrayOfObject.map((item) => {
-        item.read = true;
-        return item
-    })
-    setArrayOfObject(newnot)
-}
+    function Markallasread() {
+    
+
+        let newnot = ArrayOfObject.map((item) => {
+            item.read = true;
+            return item
+        })
+        setArrayOfObject(newnot)
+
+
+
+    }
+
+    // function nonotify() {
+    //     let unreadnot = ArrayOfObject.filter((item) => { return item.isNewNotify == false }).length
+
+    //     return unreadnot
+    // }
 
 
 
@@ -122,47 +137,55 @@ function Markallasread(){
     return (
         <div className='notPage'>
             <div className='header' >
-             
+
                 <h2 >Notifications <span id='num'>{unreadCount()}</span></h2>
-                <a href="#" id='mark'  onClick={Markallasread} > Mark all as read</a>
+                <a href="#" id='mark' onClick={Markallasread} > Mark all as read</a>
+                {/* <div
+                className="notification"
+                style={{
+                    backgroundColor: isNewNotify ? "hsl(210, 60%, 98%)" : ""
+                }}
+            > </div> */}
+            </div>
+          
+
+                <div>
+                    {ArrayOfObject.map((item) => {
+                        return (
+
+
+
+                            <NotificationsItem
+                                key={item.id}
+                                img={item.img}
+                                Username={item.Username}
+                                text={item.text}
+                                time={item.time}
+                                status={item.status}
+                                text2={item.text2}
+                                text3={item.text3}
+                                imgchess={item.imgchess}
+                                move={item.move}
+                                read={item.read}
+
+                            >
+
+                            </NotificationsItem>
+
+
+                        );
+                    })}
+
+                </div>
+
+
+
+
             </div>
 
-            <div>
-                {ArrayOfObject.map((item) => {
-                    return (
-
-            
-
-                        <NotificationsItem
-                            key={item.id}
-                            img={item.img}
-                            Username={item.Username}
-                            text={item.text}
-                            time={item.time}
-                            status={item.status}
-                            text2={item.text2}
-                            text3={item.text3}
-                            imgchess={item.imgchess}
-                            move={item.move}
-                        
-                        >
-
-                        </NotificationsItem>
-
-
-                    );
-                })}
-
-            </div>
-
-
-
-
-        </div>
-
-    )
+            )
 
 
 }
 
-export default Notificationsbox
+            export default Notificationsbox

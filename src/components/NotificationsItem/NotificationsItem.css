@@ -116,6 +116,9 @@ img {
     display: inline-block;
 
 }
+.nonotify{
+    background-color: transparent;
+}
 #not2{
    display: none;
 
