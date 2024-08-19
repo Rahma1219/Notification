@@ -1,19 +1,22 @@
-.hidden{
+.hidden {
     display: inline-flex;
 }
-.chess{
+
+.chess {
     display: flex;
     justify-content: space-between;
-   
+
 }
-.allpage{
+
+.allpage {
     width: 100%;
-height: 100%;  
-display: flex;
-justify-content: center;
-align-items: center;
-background-color: hsl(210, 60%, 98%);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(210, 60%, 98%);
 }
+
 /* .dot {
     height: 7px;
     width: 7px;
@@ -23,15 +26,17 @@ background-color: hsl(210, 60%, 98%);
     display: inline-block;
 
 } */
-.nodot{
+.nodot {
     background-color: white;
 }
-#mark{
+
+#mark {
     text-decoration: none;
     color: rgb(71, 69, 69);
     display: flex;
     align-items: center;
 }
+
 #mark:hover {
     color: hsl(219, 85%, 26%);
 }

@@ -15,9 +15,8 @@ function NotificationsItem(props) {
             
         ):(<span></span>)} */}
 
-            <div className='boxs' id='box1' >
-                <div></div>
-                <img src={props.img} />
+            <div className='boxs'  >
+                <img src={props.img} id='image' />
 
                 <div id='info'>
                     <div id='title' className={props.move}>
@@ -32,25 +31,22 @@ function NotificationsItem(props) {
                                 </>
 
                             ) : (<span ></span>)}
-
-
-
                         </div>
 
-                        <span ></span>
+                   
                         {props.Username == 'Kimberly Smith' ? (
                             <img src={props.imgchess} id='imgchess' alt="" />
 
                         ) : null
 
                         }
-
-
-
+                        
 
                     </div>
+                    <div>
+                        < p id='time'>{props.time}</p>
+                        </div>
 
-                    <p id='time'>{props.time}</p>
 
 
 
@@ -58,16 +54,21 @@ function NotificationsItem(props) {
 
 
                 </div>
+
             </div>
 
-            {props.Username == '  Rizky Hasanuddin ' ? (
-                <div id='card'>
-                    <Comment></Comment>
-                </div>
+            <div>
+                {props.Username == '  Rizky Hasanuddin ' ? (
+                    <div id='card'>
+                        <Comment></Comment>
+                    </div>
 
-            ) : null
+                ) : null
 
-            }
+                }
+            </div>
+
+
 
 
 
