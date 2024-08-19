@@ -7,8 +7,16 @@ function NotificationsItem(props) {
 
     return (
         <>
+            {/* {props.read == false?(
+                <NotificationsItem>
 
-            <div className='boxs'>
+                </NotificationsItem>
+            
+            
+        ):(<span></span>)} */}
+
+            <div className='boxs' id='box1' >
+                <div></div>
                 <img src={props.img} />
 
                 <div id='info'>
@@ -19,10 +27,13 @@ function NotificationsItem(props) {
                             <span id='text2'>{props.text2} </span>
                             <span id='text3'>{props.text3}</span>
                             {props.read == false ? (
-                                <span class='Notdot ' id='box1' ></span>
-                            ) : (<span className='nonotify'></span>)}
+                                <>
+                                    <span class='Notdot ' ></span>
+                                </>
 
-                            
+                            ) : (<span ></span>)}
+
+
 
                         </div>
 

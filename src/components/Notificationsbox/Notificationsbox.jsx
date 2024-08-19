@@ -55,6 +55,8 @@ function Notificationsbox() {
                 Username: '  Rizky Hasanuddin ',
                 text: 'sent you a private message',
                 time: '5 days ago',
+                read: true,
+       
 
 
 
@@ -101,7 +103,7 @@ function Notificationsbox() {
 
     )
 
-    const [newNotify, setNewNotify] = useState(true);
+   
 
     function unreadCount() {
         let unreadnot = ArrayOfObject.filter((item) => { return item.read == false }).length
@@ -122,12 +124,7 @@ function Notificationsbox() {
 
     }
 
-    // function nonotify() {
-    //     let unreadnot = ArrayOfObject.filter((item) => { return item.isNewNotify == false }).length
-
-    //     return unreadnot
-    // }
-
+   
 
 
 
@@ -135,17 +132,16 @@ function Notificationsbox() {
 
 
     return (
+        <div className='allpage'>
+
+       
         <div className='notPage'>
             <div className='header' >
 
                 <h2 >Notifications <span id='num'>{unreadCount()}</span></h2>
                 <a href="#" id='mark' onClick={Markallasread} > Mark all as read</a>
-                {/* <div
-                className="notification"
-                style={{
-                    backgroundColor: isNewNotify ? "hsl(210, 60%, 98%)" : ""
-                }}
-            > </div> */}
+               
+               
             </div>
           
 
@@ -181,6 +177,7 @@ function Notificationsbox() {
 
 
 
+            </div>
             </div>
 
             )
